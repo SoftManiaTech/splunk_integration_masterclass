@@ -6,7 +6,7 @@ Download & install Jenkins
 ```bash 
 sudo yum update
 
-sudo yum install wget
+sudo yum install wget -y
 ``` 
 
 2.Add the jenkins repo
@@ -28,7 +28,7 @@ sudo yum upgrade
 4.Install Java
 
 ```bash 
-sudo yum install java-11-openjdk-devel
+sudo yum install java-11-openjdk-devel -y
 ```
 
 5.Install Jenkins
