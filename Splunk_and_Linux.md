@@ -98,7 +98,7 @@ ls
 ```
 ### Go to add on's default folder and check for inputs.conf file
 ```bash
-cd /opt/splunkforwarder/etc/apps/Splunk_TA_nix
+cd Splunk_TA_nix
 cd default
 ls
 ```
