@@ -74,18 +74,34 @@ cd /opt/splunkforwarder/bin
 ## Download the splunk add on for unix and linux from splunkbase
 ## Install & Configuration of Splunk Add on:
 ### Copy the tar file to linux instance:
+If you are using Windows OS for downloading Splunk, open your command prompt as a administrator and navigate to Downloads folder:
+
+For example
+```bash
+cd C:\Users\Ramany\Downloads\
+```
+
 ```bash
 scp -i "london_ramany.pem" splunk-add-on-for-unix-and-linux_900.tgz ec2-user@ec2-18-171-221-122.eu-west-2.compute.amazonaws.com:/tmp
 ```
 ### Connect to instance using SSH client
-### Switch to splunk user
+
+### Login as Root User
 ```bash
-sudo su - splunk
+sudo su
 ```
 ### Check for the file in tmp folder
 ```bash
 cd /tmp
 ls
+```
+### Change the ownership of the add-on package
+```bash
+chown -R splunk:splunk splunk-add-on-for-unix-and-linux_900.tgz
+```
+### Login as a Splunk user
+```bash
+sudo su - splunk
 ```
 ### Extract the tar package within splunk universal forwarder apps folder
 ```bash
