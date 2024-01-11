@@ -1,3 +1,48 @@
+### Install Syslog-ng on Linux (RHEL-9)
+Login as root user
+```bash
+sudo su
+```
+
+```bash
+subscription-manager repos --enable codeready-builder-for-rhel-9-noarch-rpms
+dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+```
+Navigate to the below mentioned directory
+
+```bash
+cd /etc/yum.repos.d/
+```
+
+Install wget (Package installer)
+
+```bash
+yum install wget
+```
+
+
+```bash
+wget https://copr.fedorainfracloud.org/coprs/czanik/syslog-ng336/repo/epel-8/czanik-syslog-ng41-epel-8.repo
+```
+```bash
+yum install syslog-ng --nobest
+```
+
+Enable and start Syslog
+
+```bash
+systemctl enable syslog-ng
+systemctl start syslog-ng
+```
+Check the status of the syslog using the below command
+
+```bash
+systemctl status syslog-ng
+```
+
+
+### Configure Syslog-ng to send data via 5514 port to Splunk
+
 Login as root user using below command
 
 ```bash
@@ -5,7 +50,7 @@ sudo su
 ```
  
 
-enable syslog 
+Enable syslog 
 
 ```bash
 systemctl enable syslog-ng
@@ -24,7 +69,7 @@ List the files to check if syslog-ng.conf is available
 ls
 ```
 
-Edit the syslog-ng.conf
+Edit the syslog-ng.conf file
 
 ```bash
 vi syslog-ng.conf
@@ -39,7 +84,7 @@ file("/var/log/secure");
 };
 
 destination splunk_tcp {
-network("15.152.197.52" transport("tcp") port(5514));
+network("35.179.4.112" transport("tcp") port(5514));
 };
 
 log {
