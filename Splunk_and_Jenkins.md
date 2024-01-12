@@ -50,8 +50,9 @@ sudo systemctl start jenkins
 ```
 
 8.You can check the status of the Jenkins service using the command
+```bash
 sudo systemctl status jenkins
-
+```
 As prompted, enter the password found in /var/lib/jenkins/secrets/initialAdminPassword.
 
 Use the following command to display this password
