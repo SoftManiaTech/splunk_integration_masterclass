@@ -46,6 +46,18 @@ tar -xvf splunkforwarder-9.1.2-b6b9c8185839-Linux-x86_64.tgz -C /opt/
 ```bash
 /opt/splunkforwarder/bin/splunk start --accept-license
 ```
+
+## Configure Splunk to run at boot time
+### Exit from splunk user & sign in as root user
+```bash
+exit
+sudo su
+```
+### Enable boot start
+```bash
+/opt/splunkforwarder/bin/splunk enable boot-start -user splunk
+```
+
 ## Configuring Outputs.conf file:
 ### Go to forwarder's local folder & configure the outputs.conf file:
 ```bash
