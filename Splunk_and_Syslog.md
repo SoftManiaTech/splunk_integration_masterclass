@@ -107,7 +107,7 @@ egrep -i 'syslog-ng.*' /var/log/messages
 semanage port -l | grep 5514
 ```
 
-If the 5514 port enabled, then use below command to enable the port
+If the port 5514 is disabled, then use below command to enable the port
 
 ```bash
 semanage port -a -t http_port_t -p tcp 5514
