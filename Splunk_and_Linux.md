@@ -115,6 +115,11 @@ chown -R splunk:splunk splunk-add-on-for-unix-and-linux_900.tgz
 ```bash
 sudo su - splunk
 ```
+### Check for the file in tmp folder
+```bash
+cd /tmp
+ls
+```
 ### Extract the tar package within splunk universal forwarder apps folder
 ```bash
 tar -xvf splunk-add-on-for-unix-and-linux_900.tgz -C /opt/splunkforwarder/etc/apps/
