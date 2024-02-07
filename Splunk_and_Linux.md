@@ -59,11 +59,11 @@ sudo su
 ```
 
 ## Configuring Outputs.conf file:
-### Go to forwarder's local folder & configure the outputs.conf file:
 ### Switch to splunk user
 ```bash
 sudo su - splunk
 ```
+### Go to forwarder's local folder & configure the outputs.conf file:
 ```bash
 cd /opt/splunkforwarder/etc/system/local
 ls
