@@ -1,4 +1,14 @@
-### $SPLUNK_HOME/etc/apps/custom_api_data_collector_github/bin/getGitHubData.py
+### Create Splunk App from UI
+
+
+### Add below stanza to custom_api_data/default/app.conf
+
+```bash
+[package]
+id = custom_api_data
+```
+
+### $SPLUNK_HOME/etc/apps/custom_api_data/bin/getCustomAPIData.py
 
 ```bash
 from __future__ import print_function
@@ -59,4 +69,46 @@ if __name__ == '__main__':
 
     sys.exit(0)
 
+```
+
+### inputs.conf.spec 
+
+```bash
+[getCustomAPIData://default]
+key = <value>
+disabled = <value>
+sourcetype = <value>
+interval = <value>
+
+```
+
+### props.conf
+
+```bash
+[_json]
+TRUNCATE = 9999999
+```
+
+### example code snippet get the data from API 
+
+```bash
+# Routine to index data
+def run_script():
+    url = "https://api.github.com/repos/SoftManiaTech/splunk_cluster_admin_training/commits"
+    headers = {
+    'Accept': 'application/vnd.github+json',
+    'Authorization': 'Bearer <token>',
+    'X-GitHub-Api-Version': '2022-11-28'
+    }
+    response = requests.request("GET", url, headers=headers)
+    return response.text
+
+```
+
+```bash
+def get_data_from_API():
+    # print(get_who())
+    response_data = json.loads(run_script())
+    for data in response_data:
+        print(json.dumps(data))
 ```
