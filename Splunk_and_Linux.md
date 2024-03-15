@@ -141,8 +141,8 @@ ls
 ```
 ### Copy the inputs.conf from default to local folder & enable the inputs:
 ```bash
-cd /opt/splunk/etc/deployment-apps/Splunk_TA_nix/local
-cp /opt/splunk/etc/deployment-apps/Splunk_TA_nix/default/inputs.conf .
+cd /opt/splunk/etc/apps/Splunk_TA_nix/local
+cp /opt/splunk/etc/apps/Splunk_TA_nix/default/inputs.conf .
 sed -i 's/disabled = 1/disabled = 0/g' inputs.conf
 sed -i 's/disabled = true/disabled = false/g' inputs.conf
 ```
