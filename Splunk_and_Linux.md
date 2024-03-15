@@ -139,14 +139,12 @@ cd Splunk_TA_nix
 cd default
 ls
 ```
-### Open inputs.conf file in read mode:
+### Copy the inputs.conf from default to local folder & enable the inputs:
 ```bash
-cat inputs.conf
-```
-### Copy the entire file content and paste in the notepad and make the below changes:
-```bash
-disabled=true to disabled=false
-disabled=1 to disabled=0
+cd /opt/splunk/etc/deployment-apps/Splunk_TA_nix/local
+cp /opt/splunk/etc/deployment-apps/Splunk_TA_nix/default/inputs.conf .
+sed -i 's/disabled = 1/disabled = 0/g' inputs.conf
+sed -i 's/disabled = true/disabled = false/g' inputs.conf
 ```
 ### Move back to add-on folder
 ```bash
