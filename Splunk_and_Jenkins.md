@@ -28,7 +28,7 @@ sudo yum upgrade
 4.Install Java
 
 ```bash 
-sudo yum install java-11-openjdk-devel -y
+sudo yum install fontconfig java-17-openjdk -y
 ```
 
 5.Install Jenkins
