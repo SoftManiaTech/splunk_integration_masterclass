@@ -53,5 +53,5 @@ systemctl status mssql-server
 8.Use sqlcmd to locally connect to your new SQL Server instance.
 
 ```bash 
-sqlcmd -S localhost -U sa
+sqlcmd -S localhost -U sa -P YOUR_PASSWORD -C
 ```
