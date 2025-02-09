@@ -52,7 +52,7 @@ systemctl enable mysqld.service
 To improve security when installing MySQL, run the following command
 
 ```bash
-mysql_secure_instalation
+mysql_secure_installation
 ```
 It will ask request to set up a new password >>Enter “y”
 
