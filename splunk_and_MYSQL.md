@@ -90,8 +90,10 @@ y
 ```bash
 y
 ```
-
-
+Login to MySQL shell
+```bash
+mysql -u root -p
+```
 
 
 
